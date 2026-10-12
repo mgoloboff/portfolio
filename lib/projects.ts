@@ -1,4 +1,18 @@
-export const projects = [
+export type Project = {
+  slug: string;
+  company: string;
+  tags: string[];
+  title: string;
+  description: string;
+  metrics: { value: string; label: string }[];
+  thumbnail?: string;
+  imageAlt: string;
+  imageFit?: "cover" | "contain";
+  imagePosition: "left" | "right";
+  inProgress?: boolean;
+};
+
+export const projects: Project[] = [
   {
     slug: "real-time-reports",
     company: "Browsi",
