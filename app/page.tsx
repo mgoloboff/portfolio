@@ -22,7 +22,7 @@ export default function Home() {
           <br />
           into{" "}
           <span className="relative inline-block">
-            clarity.
+            Clarity.
             <span
               className="absolute left-0 right-0 bottom-[10%] h-[34%] bg-[var(--highlight)] -z-1 rounded-[2px] rotate-[-1.5deg]"
               aria-hidden="true"
