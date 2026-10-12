@@ -217,25 +217,31 @@ export default function CreatorsApplication() {
           </div>
         </CaseSection>
 
-        {/* [2] Design Language — no background, on site background */}
-        <CaseSection title="Design Language">
-          <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-10">
+        {/* Design Language — centered showcase */}
+        <section className="mt-20 text-center" style={{ maxWidth: "999px", width: "100%" }}>
+          <h2
+            className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
+            style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+          >
+            Design Language
+          </h2>
+          <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-14 max-w-[600px] mx-auto">
             We created a new visual language that feels personal and relevant — speaking directly to creators and building an <strong className="font-semibold">immediate emotional connection.</strong>
           </p>
 
-          <div className="flex flex-col gap-4">
-            <div className="flex gap-4 justify-start flex-wrap">
-              <Image src="/creators-illustration-1.png" alt="" width={197} height={139} className="h-[120px] w-auto rounded-[8px]" />
-              <Image src="/creators-illustration-2.png" alt="" width={237} height={139} className="h-[120px] w-auto rounded-[8px]" />
-              <Image src="/creators-illustration-3.png" alt="" width={160} height={139} className="h-[120px] w-auto rounded-[8px]" />
+          <div className="flex flex-col gap-8">
+            <div className="flex gap-6 justify-center flex-wrap">
+              <Image src="/creators-illustration-1.png" alt="" width={197} height={139} className="h-[170px] w-auto rounded-[8px]" />
+              <Image src="/creators-illustration-2.png" alt="" width={237} height={139} className="h-[170px] w-auto rounded-[8px]" />
+              <Image src="/creators-illustration-3.png" alt="" width={160} height={139} className="h-[170px] w-auto rounded-[8px]" />
             </div>
-            <div className="flex gap-4 justify-start flex-wrap">
-              <Image src="/creators-illustration-4.png" alt="" width={178} height={139} className="h-[120px] w-auto rounded-[8px]" />
-              <Image src="/creators-illustration-5.png" alt="" width={174} height={139} className="h-[120px] w-auto rounded-[8px]" />
-              <Image src="/creators-illustration-6.png" alt="" width={228} height={139} className="h-[120px] w-auto rounded-[8px]" />
+            <div className="flex gap-6 justify-center flex-wrap">
+              <Image src="/creators-illustration-4.png" alt="" width={178} height={139} className="h-[170px] w-auto rounded-[8px]" />
+              <Image src="/creators-illustration-5.png" alt="" width={174} height={139} className="h-[170px] w-auto rounded-[8px]" />
+              <Image src="/creators-illustration-6.png" alt="" width={228} height={139} className="h-[170px] w-auto rounded-[8px]" />
             </div>
           </div>
-        </CaseSection>
+        </section>
 
         {/* [3][9] Screens — fonts match site, centered narrow layout */}
         <CaseSection title="Screens – Bringing Core Values to Life">
