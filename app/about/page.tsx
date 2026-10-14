@@ -50,8 +50,7 @@ export default function About() {
               <p className="text-[16px] leading-relaxed text-[#444444]">
                 I moved to Israel from Argentina as a kid, but never left my roots behind -
                 especially not when there are empanadas, alfajores, or anything involving dulce de
-                leche on the table (seriously, try it on toast). In recent years, I&apos;ve been
-                living in Tel Aviv. Outside of work, you&apos;ll likely find me swimming.
+                leche on the table (seriously, try it on toast). Outside of work, you&apos;ll likely find me swimming.
               </p>
             </div>
           </div>
