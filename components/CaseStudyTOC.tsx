@@ -44,7 +44,7 @@ export default function CaseStudyTOC({ sections }: { sections: TOCSection[] }) {
   }, [sections]);
 
   return (
-    <aside className="hidden 2xl:block 2xl:sticky 2xl:top-[110px] 2xl:h-fit 2xl:self-start">
+    <aside className="hidden 2xl:block fixed top-[110px] w-[180px]" style={{ left: "calc(50vw - 744px)" }}>
       <nav aria-label="Case study sections">
         <ul className="flex flex-col border-l border-[var(--border)]">
           {sections.map(({ id, label }) => {
