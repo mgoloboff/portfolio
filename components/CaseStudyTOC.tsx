@@ -56,7 +56,7 @@ export default function CaseStudyTOC({ sections }: { sections: TOCSection[] }) {
                   aria-current={isActive ? "location" : undefined}
                   className={`block -ml-px pl-4 py-[7px] border-l-2 text-[13px] leading-[1.4] transition-colors ${
                     isActive
-                      ? "border-[var(--accent)] text-[var(--fg)] font-semibold"
+                      ? "border-[var(--fg)] text-[var(--fg)] font-semibold"
                       : "border-transparent text-[var(--muted)] hover:text-[var(--fg)]"
                   }`}
                 >
