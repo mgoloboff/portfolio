@@ -13,20 +13,19 @@ export const metadata: Metadata = {
 
 const tocSections: TOCSection[] = [
   { id: "overview", label: "Overview" },
-  { id: "not-working", label: "What wasn't working" },
+  { id: "not-working", label: "What Wasn't Working" },
   { id: "business", label: "Business Potential" },
-  { id: "users", label: "Who our users are" },
+  { id: "users", label: "Our Users" },
   { id: "user-flow", label: "User Flow" },
   { id: "design-language", label: "Design Language" },
   { id: "screens", label: "Screens" },
-  { id: "takeaways", label: "Key Takeaways" },
+  { id: "takeaways", label: "Takeaways" },
 ];
 
 export default function CreatorsApplication() {
   return (
     <>
       <Nav />
-
       <CaseStudyTOC sections={tocSections} />
 
       <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
@@ -348,7 +347,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         <OtherProjects currentSlug="creators-application" />
-        </div>
+      </div>
 
       <Footer />
     </>

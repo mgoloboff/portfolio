@@ -56,7 +56,6 @@ export default function RealTimeReports() {
   return (
     <>
       <Nav />
-
       <CaseStudyTOC sections={tocSections} />
 
       <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
@@ -345,7 +344,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         <OtherProjects currentSlug="real-time-reports" />
-        </div>
+      </div>
 
       <Footer />
     </>
