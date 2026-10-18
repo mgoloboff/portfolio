@@ -57,8 +57,8 @@ export default function RealTimeReports() {
     <>
       <Nav />
 
-      {/* Outer grid: TOC left, content right */}
-      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr] xl:gap-10">
+      {/* Outer grid: TOC left, content center, spacer right */}
+      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr_200px] xl:gap-10">
         {/* Sidebar TOC */}
         <CaseStudyTOC sections={tocSections} />
 
@@ -350,6 +350,8 @@ export default function RealTimeReports() {
 
         <OtherProjects currentSlug="real-time-reports" />
         </div>
+        {/* Right spacer to balance TOC and keep content centered */}
+        <div />
       </div>
 
       <Footer />
