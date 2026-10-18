@@ -8,43 +8,49 @@ export type TOCSection = {
 };
 
 export default function CaseStudyTOC({ sections }: { sections: TOCSection[] }) {
+  const [visible, setVisible] = useState(false);
   const [activeId, setActiveId] = useState(sections[0]?.id);
   const activeIdRef = useRef(activeId);
   activeIdRef.current = activeId;
 
   useEffect(() => {
-    const visibleIds = new Set<string>();
+    const mq = window.matchMedia("(min-width: 1536px)");
+    setVisible(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setVisible(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
 
+  useEffect(() => {
+    if (!visible) return;
+    const visibleIds = new Set<string>();
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            visibleIds.add(entry.target.id);
-          } else {
-            visibleIds.delete(entry.target.id);
-          }
+          if (entry.isIntersecting) visibleIds.add(entry.target.id);
+          else visibleIds.delete(entry.target.id);
         });
-
         if (visibleIds.size === 0) return;
-
         const firstVisible = sections.find((s) => visibleIds.has(s.id));
-        if (firstVisible && firstVisible.id !== activeIdRef.current) {
+        if (firstVisible && firstVisible.id !== activeIdRef.current)
           setActiveId(firstVisible.id);
-        }
       },
       { rootMargin: "-110px 0px -65% 0px", threshold: 0 }
     );
-
     sections.forEach(({ id }) => {
       const el = document.getElementById(id);
       if (el) observer.observe(el);
     });
-
     return () => observer.disconnect();
-  }, [sections]);
+  }, [sections, visible]);
+
+  if (!visible) return null;
 
   return (
-    <aside className="hidden xl:block xl:sticky xl:top-[110px] xl:h-fit xl:self-start">
+    <aside
+      className="fixed top-[110px] w-[180px]"
+      style={{ left: "calc(50vw - 744px)" }}
+    >
       <nav aria-label="Case study sections">
         <ul className="flex flex-col border-l border-[var(--border)]">
           {sections.map(({ id, label }) => {

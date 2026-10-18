@@ -11,6 +11,16 @@ export const metadata: Metadata = {
   title: "Revenue Overview Dashboard · Matias Goloboff",
 };
 
+const tocSections: TOCSection[] = [
+  { id: "overview", label: "Overview" },
+  { id: "users", label: "Our Users" },
+  { id: "insights", label: "Key Insights" },
+  { id: "constraints", label: "Business Constraints" },
+  { id: "design-strategy", label: "Design Strategy" },
+  { id: "surprise", label: "Surprise" },
+  { id: "takeaways", label: "Key Takeaways" },
+];
+
 // ─── Helpers (must be declared before the page component for Turbopack) ───────
 
 const stakeholders = [
@@ -67,27 +77,15 @@ function CaseSection({ id, title, children }: { id?: string; title: string; chil
   );
 }
 
-const tocSections: TOCSection[] = [
-  { id: "overview", label: "Overview" },
-  { id: "users", label: "Our Users" },
-  { id: "insights", label: "Key Insights" },
-  { id: "constraints", label: "Business Constraints" },
-  { id: "design-strategy", label: "Design Strategy" },
-  { id: "surprise", label: "Surprise" },
-  { id: "takeaways", label: "Key Takeaways" },
-];
-
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function RevenueDashboard() {
   return (
     <>
       <Nav />
+      <CaseStudyTOC sections={tocSections} />
 
-      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr_200px] xl:gap-10">
-        <CaseStudyTOC sections={tocSections} />
-
-        <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
+      <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
         {/* Header */}
         <header className="text-center" style={{ padding: "48px 0 8px" }}>
           <h1
@@ -337,8 +335,6 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         <OtherProjects currentSlug="revenue-dashboard" />
-        </div>
-        <div />
       </div>
 
       <Footer />
