@@ -44,7 +44,7 @@ export default function CaseStudyTOC({ sections }: { sections: TOCSection[] }) {
   }, [sections]);
 
   return (
-    <aside className="hidden 2xl:block 2xl:sticky 2xl:top-[110px] 2xl:h-fit 2xl:self-start">
+    <aside className="hidden xl:block xl:sticky xl:top-[110px] xl:h-fit xl:self-start">
       <p className="font-mono text-[11px] uppercase tracking-[0.12em] text-[var(--muted)] mb-5">
         On this page
       </p>

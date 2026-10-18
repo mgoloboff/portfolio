@@ -58,7 +58,7 @@ export default function RealTimeReports() {
       <Nav />
 
       {/* Outer grid: TOC left, content right */}
-      <div className="relative max-w-[1440px] mx-auto 2xl:grid 2xl:grid-cols-[200px_1fr] 2xl:gap-10">
+      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr] xl:gap-10">
         {/* Sidebar TOC */}
         <CaseStudyTOC sections={tocSections} />
 
