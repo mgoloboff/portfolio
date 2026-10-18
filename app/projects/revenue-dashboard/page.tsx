@@ -5,6 +5,7 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import OtherProjects from "@/components/OtherProjects";
+import CaseStudyTOC, { type TOCSection } from "@/components/CaseStudyTOC";
 
 export const metadata: Metadata = {
   title: "Revenue Overview Dashboard · Matias Goloboff",
@@ -52,9 +53,9 @@ function BusinessConstraintsIllustration() {
 }
 
 
-function CaseSection({ title, children }: { title: string; children: React.ReactNode }) {
+function CaseSection({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-20" style={{ maxWidth: "999px", width: "100%" }}>
+    <section id={id} className="mt-20 scroll-mt-[120px]" style={{ maxWidth: "999px", width: "100%" }}>
       <h2
         className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
         style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
@@ -66,6 +67,16 @@ function CaseSection({ title, children }: { title: string; children: React.React
   );
 }
 
+const tocSections: TOCSection[] = [
+  { id: "overview", label: "Overview" },
+  { id: "users", label: "Our Users" },
+  { id: "insights", label: "Key Insights" },
+  { id: "constraints", label: "Business Constraints" },
+  { id: "design-strategy", label: "Design Strategy" },
+  { id: "surprise", label: "Surprise" },
+  { id: "takeaways", label: "Key Takeaways" },
+];
+
 // ─── Page ─────────────────────────────────────────────────────────────────────
 
 export default function RevenueDashboard() {
@@ -73,7 +84,10 @@ export default function RevenueDashboard() {
     <>
       <Nav />
 
-      <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
+      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr_200px] xl:gap-10">
+        <CaseStudyTOC sections={tocSections} />
+
+        <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
         {/* Header */}
         <header className="text-center" style={{ padding: "48px 0 8px" }}>
           <h1
@@ -139,7 +153,7 @@ export default function RevenueDashboard() {
         </div>
 
         {/* Overview */}
-        <CaseSection title="Overview">
+        <CaseSection id="overview" title="Overview">
           <p className="text-[18px] leading-[1.62] text-[#3a352c]">
             Managing dozens or even hundreds of internal and external sites is challenging, and
             existing tools didn&apos;t provide the visibility site owners and managers needed.
@@ -149,7 +163,7 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         {/* Understanding Our Users */}
-        <CaseSection title="Understanding Our Users">
+        <CaseSection id="users" title="Understanding Our Users">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
             We interviewed <strong className="font-semibold">5 revenue managers</strong>, each responsible for{" "}
             <strong className="font-semibold">overseeing multiple websites</strong> as part of their daily workflow.
@@ -198,7 +212,7 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         {/* Key Insights */}
-        <CaseSection title="Key Insights">
+        <CaseSection id="insights" title="Key Insights">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
             Our dashboard must surface the most important information at a glance – giving users
             clarity and helping them focus on what matters.
@@ -214,7 +228,7 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         {/* Business Constraints */}
-        <section className="mt-20 flex items-start gap-8" style={{ maxWidth: "999px", width: "100%" }}>
+        <section id="constraints" className="mt-20 scroll-mt-[120px] flex items-start gap-8" style={{ maxWidth: "999px", width: "100%" }}>
           <div className="flex-1 min-w-0">
             <h2
               className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
@@ -234,7 +248,7 @@ export default function RevenueDashboard() {
         </section>
 
         {/* Design Strategy */}
-        <CaseSection title="Design Strategy">
+        <CaseSection id="design-strategy" title="Design Strategy">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
             3 sections, divided into 3 columns.
           </p>
@@ -288,7 +302,7 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         {/* Surprise */}
-        <CaseSection title={`Surprise – "We Need Mobile Too"`}>
+        <CaseSection id="surprise" title={`Surprise – "We Need Mobile Too"`}>
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
             Midway through the project, a new hard requirement arrived: go mobile. We adapted the
             dashboard into a scrollable single-column format without compromising data quality.
@@ -305,7 +319,7 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         {/* Key Takeaways */}
-        <CaseSection title="Key Takeaways from the Process">
+        <CaseSection id="takeaways" title="Key Takeaways from the Process">
           <ul className="flex flex-col gap-5">
             <li
               className="text-[18px] leading-[1.62] text-[#3a352c]"
@@ -323,6 +337,8 @@ export default function RevenueDashboard() {
         </CaseSection>
 
         <OtherProjects currentSlug="revenue-dashboard" />
+        </div>
+        <div />
       </div>
 
       <Footer />
