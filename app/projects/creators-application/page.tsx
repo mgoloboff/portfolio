@@ -5,17 +5,32 @@ import Image from "next/image";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
 import OtherProjects from "@/components/OtherProjects";
+import CaseStudyTOC, { type TOCSection } from "@/components/CaseStudyTOC";
 
 export const metadata: Metadata = {
   title: "Creators Application Redesign · Matias Goloboff",
 };
+
+const tocSections: TOCSection[] = [
+  { id: "overview", label: "Overview" },
+  { id: "not-working", label: "What wasn't working" },
+  { id: "business", label: "Business Potential" },
+  { id: "users", label: "Who our users are" },
+  { id: "user-flow", label: "User Flow" },
+  { id: "design-language", label: "Design Language" },
+  { id: "screens", label: "Screens" },
+  { id: "takeaways", label: "Key Takeaways" },
+];
 
 export default function CreatorsApplication() {
   return (
     <>
       <Nav />
 
-      <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
+      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr_200px] xl:gap-10">
+        <CaseStudyTOC sections={tocSections} />
+
+        <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
 
         {/* Header — short subtitle only */}
         <header className="text-center" style={{ padding: "48px 0 8px" }}>
@@ -43,7 +58,7 @@ export default function CreatorsApplication() {
         </div>
 
         {/* [1] Overview — split from header */}
-        <CaseSection title="Overview">
+        <CaseSection id="overview" title="Overview">
           <p className="text-[18px] leading-[1.62] text-[#3a352c]">
             The platform&apos;s application process was outdated, creating friction that limited its potential.
             Our challenge was to design a seamless, intuitive, and engaging flow that would increase the number
@@ -52,7 +67,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         {/* What was not working? */}
-        <CaseSection title="What was not working?">
+        <CaseSection id="not-working" title="What was not working?">
           <div className="flex flex-col md:flex-row gap-12 items-start">
             <div className="flex-1">
               <ul className="flex flex-col gap-6">
@@ -80,7 +95,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         {/* Business Potential */}
-        <CaseSection title="Business Potential">
+        <CaseSection id="business" title="Business Potential">
           <div className="bg-white border border-[#dedede] rounded-[18px] p-10">
             <p className="font-display font-bold text-[19px] text-[var(--fg)] mb-8 tracking-[-0.01em]">
               Monthly Value per Creator
@@ -118,7 +133,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         {/* Who our users are? */}
-        <CaseSection title="Who our users are?">
+        <CaseSection id="users" title="Who our users are?">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-12">
             To get a clear picture of our <strong className="font-semibold text-[var(--fg)]">creators&apos; needs and behaviors</strong>, we conducted extensive research
           </p>
@@ -158,7 +173,7 @@ export default function CreatorsApplication() {
         </div>
 
         {/* User Flow & Journey */}
-        <CaseSection title="User Flow & Journey">
+        <CaseSection id="user-flow" title="User Flow & Journey">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
             We mapped a simple, step-by-step process that guides users clearly and <strong className="font-semibold text-[var(--fg)]">builds trust.</strong>
           </p>
@@ -218,7 +233,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         {/* Design Language — centered showcase */}
-        <section className="mt-20 text-center" style={{ maxWidth: "999px", width: "100%" }}>
+        <section id="design-language" className="mt-20 scroll-mt-[120px] text-center" style={{ maxWidth: "999px", width: "100%" }}>
           <h2
             className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
             style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
@@ -244,7 +259,7 @@ export default function CreatorsApplication() {
         </section>
 
         {/* [3][9] Screens — fonts match site, centered narrow layout */}
-        <CaseSection title="Screens – Bringing Core Values to Life">
+        <CaseSection id="screens" title="Screens – Bringing Core Values to Life">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-16">
             To help more users complete onboarding, we crafted every screen based on real user needs and experience principles that reflect our product&apos;s personality and purpose.
           </p>
@@ -316,7 +331,7 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         {/* [10] Key Takeaways — accent left-border style like rest of site */}
-        <CaseSection title="Key Takeaways from the Process">
+        <CaseSection id="takeaways" title="Key Takeaways from the Process">
           <ul className="flex flex-col gap-5">
             {[
               <>Learned to always <strong className="font-semibold">question product requirements</strong> — I received desktop-only wireframes with no mention of mobile, so by challenging assumptions early, I ensured a proper mobile-first design.</>,
@@ -334,6 +349,8 @@ export default function CreatorsApplication() {
         </CaseSection>
 
         <OtherProjects currentSlug="creators-application" />
+        </div>
+        <div />
       </div>
 
       <Footer />
@@ -341,9 +358,9 @@ export default function CreatorsApplication() {
   );
 }
 
-function CaseSection({ title, children }: { title: string; children: React.ReactNode }) {
+function CaseSection({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-20" style={{ maxWidth: "999px", width: "100%" }}>
+    <section id={id} className="mt-20 scroll-mt-[120px]" style={{ maxWidth: "999px", width: "100%" }}>
       <h2
         className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
         style={{ fontSize: "clamp(24px, 3vw, 34px)" }}

@@ -7,12 +7,23 @@ import Footer from "@/components/Footer";
 import OtherProjects from "@/components/OtherProjects";
 import UserFlowDiagram from "@/components/UserFlowDiagram";
 import UserTestingComparison from "@/components/UserTestingComparison";
+import CaseStudyTOC, { type TOCSection } from "@/components/CaseStudyTOC";
 
 export const metadata: Metadata = {
   title: "Real-Time Report System · Matias Goloboff",
 };
 
 const B = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
+
+const tocSections: TOCSection[] = [
+  { id: "overview", label: "Overview" },
+  { id: "research", label: "Research" },
+  { id: "user-flow", label: "User Flow" },
+  { id: "design", label: "Design" },
+  { id: "user-testing", label: "User Testing" },
+  { id: "validation", label: "Validation" },
+  { id: "takeaways", label: "Takeaways" },
+];
 
 function VideoBlock({
   title,
@@ -46,7 +57,13 @@ export default function RealTimeReports() {
     <>
       <Nav />
 
-      <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
+      {/* Outer grid: TOC left, content center, spacer right */}
+      <div className="relative max-w-[1440px] mx-auto xl:grid xl:grid-cols-[200px_1fr_200px] xl:gap-10">
+        {/* Sidebar TOC */}
+        <CaseStudyTOC sections={tocSections} />
+
+        {/* Main content */}
+        <div className="max-w-[1080px] mx-auto px-8 pb-[90px] min-h-screen" style={{ padding: "0 32px 90px" }}>
         {/* Header */}
         <header className="text-center" style={{ padding: "48px 0 8px" }}>
           {/* Title */}
@@ -100,7 +117,7 @@ export default function RealTimeReports() {
         </div>
 
         {/* Overview */}
-        <CaseSection title="Overview">
+        <CaseSection id="overview" title="Overview">
           <p className="text-[18px] leading-[1.62] text-[#3a352c]">
             A company pivot to B2B exposed that our reporting tools weren&apos;t built for external users.
             We needed to create a system that lets users intuitively investigate and analyze real-time
@@ -109,7 +126,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* Research */}
-        <CaseSection title="Research">
+        <CaseSection id="research" title="Research">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
             We studied how analysts search for answers at work, and where reporting tools slow them down.
           </p>
@@ -232,7 +249,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* User Flow */}
-        <CaseSection title="From Research to User Flow">
+        <CaseSection id="user-flow" title="From Research to User Flow">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
             We focused on a simple layout, divided into 3 clear sections.
           </p>
@@ -240,7 +257,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* Design */}
-        <CaseSection title="Aligning Design with Users' Mental Models">
+        <CaseSection id="design" title="Aligning Design with Users' Mental Models">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
             We focused on a simple layout, divided into 3 clear sections.
           </p>
@@ -282,7 +299,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* User Testing */}
-        <CaseSection title="User Testing">
+        <CaseSection id="user-testing" title="User Testing">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
             After completing the MVP, we conducted 5 internal user testing sessions.
             The goal was to validate core flows, uncover usability issues, and make
@@ -293,7 +310,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* Validation */}
-        <CaseSection title="Validation & Iteration">
+        <CaseSection id="validation" title="Validation & Iteration">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
             User testing confirmed the system&apos;s usability, and{" "}
             <strong className="font-semibold">quick refinements led to v1.1</strong>
@@ -312,7 +329,7 @@ export default function RealTimeReports() {
         </CaseSection>
 
         {/* Takeaways */}
-        <CaseSection title="Key Takeaways from the Process">
+        <CaseSection id="takeaways" title="Key Takeaways from the Process">
           <ul className="flex flex-col gap-5">
             {[
               <>Learned to quickly turn mistakes into <strong className="font-semibold">solutions under pressure</strong></>,
@@ -332,6 +349,9 @@ export default function RealTimeReports() {
         </CaseSection>
 
         <OtherProjects currentSlug="real-time-reports" />
+        </div>
+        {/* Right spacer to balance TOC and keep content centered */}
+        <div />
       </div>
 
       <Footer />
@@ -339,9 +359,9 @@ export default function RealTimeReports() {
   );
 }
 
-function CaseSection({ title, children }: { title: string; children: React.ReactNode }) {
+function CaseSection({ id, title, children }: { id?: string; title: string; children: React.ReactNode }) {
   return (
-    <section className="mt-20" style={{ maxWidth: "999px", width: "100%" }}>
+    <section id={id} className="mt-20 scroll-mt-[120px]" style={{ maxWidth: "999px", width: "100%" }}>
       <h2
         className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full"
         style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
