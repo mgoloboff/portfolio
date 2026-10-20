@@ -268,7 +268,14 @@ export default function RealTimeReports() {
             />
           </div>
 
-          <div className="flex flex-col gap-16 mt-4">
+          <h3
+            className="font-display font-extrabold tracking-[-0.02em] mb-6 w-full mt-4"
+            style={{ fontSize: "clamp(24px, 3vw, 34px)" }}
+          >
+            The UX Decisions Behind the Design
+          </h3>
+
+          <div className="flex flex-col gap-16">
             <VideoBlock
               title="Just Select and Run – Fast"
               description={

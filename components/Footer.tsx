@@ -23,19 +23,11 @@ export default function Footer() {
   return (
     <footer className="bg-[var(--fg)] text-[var(--bg)] py-20 md:py-28">
       <div className="max-w-[1280px] mx-auto px-6 md:px-10">
-        <p className="font-mono text-[12px] text-[var(--bg)]/50 mb-6">
-          Probably tweaking this portfolio again.
-        </p>
-
         <h2 className="font-display text-[clamp(36px,6vw,72px)] font-extrabold leading-[1.05] tracking-[-0.03em] mb-10">
-          That&apos;s the work.
-          <br />
-          Here&apos;s the{" "}
           <em className="font-display not-italic text-[var(--bg)]/40">
-            awkward
-          </em>
-          <br />
-          reaching out part.
+            Let&apos;s work
+          </em>{" "}
+          together
         </h2>
 
         <div>
