@@ -76,27 +76,19 @@ export default function RealTimeReports() {
         </header>
 
         {/* Hero image */}
-        <div className="mt-[30px] max-w-[999px] w-full">
-          <div className="relative overflow-hidden w-full" style={{ aspectRatio: "2000 / 1128" }}>
-            <Image
-              src="/real-time-reports-hero-v2.webp"
-              alt="Real-Time Report System"
-              width={2000}
-              height={1335}
-              priority
-              className="w-full h-auto rounded-[18px]"
-              style={{
-                position: "absolute",
-                left: "-4.85%",
-                top: "0",
-                maxWidth: "none",
-              }}
-            />
-          </div>
+        <div className="-mt-[40px] max-w-[999px] w-full">
+          <Image
+            src="/real-time-reports-hero-v2.webp"
+            alt="Real-Time Report System"
+            width={1500}
+            height={1168}
+            priority
+            className="w-full h-auto"
+          />
         </div>
 
         {/* Metrics row */}
-        <div className="flex flex-wrap gap-[56px] mt-[46px] mb-2 justify-center text-center">
+        <div className="flex flex-wrap gap-[56px] mt-0 mb-2 justify-center text-center">
           <div>
             <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">3</div>
             <div className="font-mono text-[12px] text-[var(--muted)]">Enterprise pilots launched</div>
