@@ -88,7 +88,7 @@ export default function RealTimeReports() {
         </div>
 
         {/* Metrics row */}
-        <div className="flex flex-wrap gap-[56px] mt-0 mb-2 justify-center text-center">
+        <div className="flex flex-wrap gap-[56px] -mt-[40px] mb-2 justify-center text-center">
           <div>
             <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">3</div>
             <div className="font-mono text-[12px] text-[var(--muted)]">Enterprise pilots launched</div>
