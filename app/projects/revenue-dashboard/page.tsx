@@ -261,7 +261,7 @@ export default function RevenueDashboard() {
                 <Image
                   src="/revenue-dashboard-kpi-cards.png"
                   alt="Revenue Dashboard – Quick-glance KPI cards"
-                  width={1600} height={900}
+                  width={1408} height={156}
                   className="w-full h-auto block"
                 />
               </div>
@@ -276,7 +276,7 @@ export default function RevenueDashboard() {
                 <Image
                   src="/revenue-dashboard-chart-overlay.png"
                   alt="Revenue Dashboard – Sessions and Revenue overlay chart"
-                  width={1600} height={900}
+                  width={1408} height={440}
                   className="w-full h-auto block"
                 />
               </div>
@@ -287,11 +287,11 @@ export default function RevenueDashboard() {
               <p className="text-[16px] leading-[1.62] text-[#3a352c] mb-6">
                 Revenue by OS, Device, and by Country — enabling users to dig deeper without losing context.
               </p>
-              <div className="w-full rounded-[18px] overflow-hidden">
+              <div className="w-full">
                 <Image
                   src="/revenue-dashboard-breakdown.png"
                   alt="Revenue Dashboard – Contextual breakdowns by OS, Device, Country"
-                  width={1600} height={900}
+                  width={1408} height={337}
                   className="w-full h-auto block"
                 />
               </div>
