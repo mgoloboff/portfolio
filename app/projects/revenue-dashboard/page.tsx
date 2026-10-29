@@ -112,7 +112,7 @@ export default function RevenueDashboard() {
               className="w-full h-auto"
               style={{
                 position: "absolute",
-                top: "-9.5%",
+                top: "0",
                 left: "0",
                 maxWidth: "none",
               }}
