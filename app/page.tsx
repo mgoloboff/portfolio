@@ -74,6 +74,7 @@ function ProjectCard({
   thumbnail,
   imageAlt,
   imageFit = "cover",
+  imageObjectPosition,
   imagePosition,
   inProgress,
 }: {
@@ -86,6 +87,7 @@ function ProjectCard({
   thumbnail?: string;
   imageAlt: string;
   imageFit?: "cover" | "contain";
+  imageObjectPosition?: string;
   imagePosition: "left" | "right";
   inProgress?: boolean;
 }) {
@@ -161,8 +163,11 @@ function ProjectCard({
                 fill
                 sizes="(max-width: 768px) 100vw, 50vw"
                 quality={90}
-                style={imageFit === "contain" ? { filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.04))" } : undefined}
-                className={`${imageFit === "contain" ? "object-contain p-10" : "object-cover"} object-center`}
+                style={{
+                  ...(imageFit === "contain" ? { filter: "drop-shadow(0 2px 8px rgba(0,0,0,0.04))" } : {}),
+                  ...(imageObjectPosition ? { objectPosition: imageObjectPosition } : {}),
+                }}
+                className={`${imageFit === "contain" ? "object-contain p-10" : "object-cover"} ${imageObjectPosition ? "" : "object-center"}`}
               />
             ) : (
               <div className="absolute inset-0 flex items-center justify-center">

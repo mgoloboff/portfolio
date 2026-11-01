@@ -8,6 +8,7 @@ export type Project = {
   thumbnail?: string;
   imageAlt: string;
   imageFit?: "cover" | "contain";
+  imageObjectPosition?: string;
   imagePosition: "left" | "right";
   inProgress?: boolean;
 };
@@ -43,6 +44,7 @@ export const projects: Project[] = [
     ],
     thumbnail: "/revenue-dashboard-thumb.webp",
     imageAlt: "Revenue Overview Dashboard",
+    imageObjectPosition: "center 25%",
     imagePosition: "left" as const,
   },
   {
