@@ -29,10 +29,10 @@ const NODES_RAW: FNode[] = [
   { id: "predef",  label: "Pre defined\n(Data Source)",        shape: "diamond", cx: 421,  cy: 551, w: 229, h: 208, color: "blue-light" },
   { id: "saved",   label: "Select from\nsaved reports",        shape: "diamond", cx: 706,  cy: 273, w: 229, h: 208, color: "blue-light" },
   { id: "reportd", label: "Report page",                       shape: "diamond", cx: 706,  cy: 551, w: 229, h: 208, color: "blue-light" },
-  { id: "filter",  label: "Filter Single\nMetric/Dimension",   shape: "square",  cx: 1230, cy: 220, w: 176, h: 176, color: "gray" },
-  { id: "metric",  label: "Add Metric",                        shape: "square",  cx: 1230, cy: 443, w: 176, h: 176, color: "gray" },
-  { id: "dim",     label: "Add Dimension",                     shape: "square",  cx: 1230, cy: 666, w: 176, h: 176, color: "gray" },
-  { id: "date",    label: "Select Date",                       shape: "square",  cx: 1230, cy: 894, w: 176, h: 176, color: "gray" },
+  { id: "date",    label: "Select Date",                       shape: "square",  cx: 1230, cy: 220, w: 176, h: 176, color: "gray" },
+  { id: "dim",     label: "Add Dimension",                     shape: "square",  cx: 1230, cy: 443, w: 176, h: 176, color: "gray" },
+  { id: "metric",  label: "Add Metric",                        shape: "square",  cx: 1230, cy: 666, w: 176, h: 176, color: "gray" },
+  { id: "filter",  label: "Filter Single\nMetric/Dimension",   shape: "square",  cx: 1230, cy: 894, w: 176, h: 176, color: "gray" },
   { id: "run",     label: "Run Report",                        shape: "action",  cx: 1969, cy: 543, w: 192, h: 88,  color: "blue-bright" },
   { id: "reportr", label: "Report page",                       shape: "diamond", cx: 2353, cy: 543, w: 192, h: 172, color: "blue-light" },
   { id: "save",    label: "Save/Export/Share",                  shape: "action",  cx: 2353, cy: 291, w: 192, h: 88,  color: "gray" },
@@ -62,9 +62,9 @@ const EDGES: FEdge[] = [
   { id: "e6",  from: "reportd", to: "metric" },
   { id: "e7",  from: "reportd", to: "dim" },
   { id: "e8",  from: "reportd", to: "date" },
-  { id: "e24", from: "filter",  to: "metric" },
-  { id: "e25", from: "metric",  to: "dim" },
-  { id: "e26", from: "dim",     to: "date" },
+  { id: "e24", from: "date",   to: "dim" },
+  { id: "e25", from: "dim",    to: "metric" },
+  { id: "e26", from: "metric", to: "filter" },
   { id: "e9",  from: "filter",  to: "run" },
   { id: "e10", from: "metric",  to: "run" },
   { id: "e11", from: "dim",     to: "run" },
@@ -90,7 +90,7 @@ const EDGE_DURATIONS: Record<string, number> = {
 
 // One dot travels the main user journey sequentially
 const FLOW_SEQUENCE = [
-  "e1", "e3", "e5", "e24", "e25", "e26", "e12", "e13",
+  "e1", "e3", "e8", "e24", "e25", "e26", "e9", "e13",
   "e14", "e16", "e17", "e18", "e19", "e15",
   "e27", "e2", "e4",
 ];
@@ -133,8 +133,8 @@ function makePath(edge: FEdge): string {
 function makeBypassPath(): string {
   const from = NODE_MAP["reportd"];
   const to   = NODE_MAP["run"];
-  const dateNode = NODE_MAP["date"];
-  const bypassY  = dateNode.cy + dateNode.h / 2 + 55;
+  const filterNode = NODE_MAP["filter"];
+  const bypassY  = filterNode.cy + filterNode.h / 2 + 55;
   const [x1, y1] = getPort(from, "bottom");
   const [x2, y2] = getPort(to, "bottom");
   return `M ${x1.toFixed(1)},${y1.toFixed(1)} C ${x1.toFixed(1)},${bypassY.toFixed(1)} ${x2.toFixed(1)},${bypassY.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
@@ -163,7 +163,7 @@ const CONTAINER = getContainerBounds();
 const PAD = 30;
 const allXs = NODES.flatMap((n) => [n.cx - n.w / 2, n.cx + n.w / 2]);
 const allYs = NODES.flatMap((n) => [n.cy - n.h / 2, n.cy + n.h / 2]);
-const bypassMaxY = NODE_MAP["date"].cy + NODE_MAP["date"].h / 2 + 55;
+const bypassMaxY = NODE_MAP["filter"].cy + NODE_MAP["filter"].h / 2 + 55;
 allYs.push(bypassMaxY);
 const minX = Math.min(...allXs) - PAD;
 const minY = Math.min(...allYs) - PAD;

@@ -237,9 +237,6 @@ export default function RealTimeReports() {
 
         {/* User Flow */}
         <CaseSection id="user-flow" title="From Research to User Flow">
-          <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
-            We focused on a simple layout, divided into 3 clear sections.
-          </p>
           <UserFlowDiagram />
         </CaseSection>
 
