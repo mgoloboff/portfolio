@@ -14,10 +14,10 @@ export default function Nav() {
 
         <div className="flex items-center gap-6">
           <Link
-            href="/"
+            href="/#work"
             className="font-mono text-[13px] text-[var(--fg)] hover:opacity-60 transition-opacity"
           >
-            work
+            products
           </Link>
           <Link
             href="/about"

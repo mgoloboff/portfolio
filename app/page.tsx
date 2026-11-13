@@ -31,14 +31,14 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 font-mono text-[14px] text-[var(--muted)] tracking-[0.01em]">
-          Product Designer · 5+ years · B2B SaaS · Complex Systems
+          Product Designer · Product Builder · 5+ years · B2B SaaS · Complex Systems
         </p>
 
         <a
           href="#work"
           className="inline-flex items-center gap-2 mt-8 px-[26px] py-4 bg-[var(--accent)] text-[var(--bg)] font-mono font-bold text-[14px] rounded-full hover:opacity-90 transition-opacity"
         >
-          See the work ↓
+          Selected Products ↓
         </a>
       </section>
 
@@ -48,7 +48,7 @@ export default function Home() {
       {/* Selected Work */}
       <section id="work" className="max-w-[1280px] mx-auto px-6 md:px-10 pt-20 pb-24">
         <h2 className="font-display text-[clamp(32px,5vw,48px)] font-extrabold tracking-[-0.02em] mb-12">
-          Selected work
+          Selected Products
         </h2>
 
         <div className="flex flex-col gap-8">
