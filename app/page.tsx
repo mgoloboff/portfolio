@@ -31,7 +31,7 @@ export default function Home() {
         </h1>
 
         <p className="mt-6 font-mono text-[14px] text-[var(--muted)] tracking-[0.01em]">
-          Product Designer · Product Builder · 5+ years · B2B SaaS · Complex Systems
+          Product Designer · AI Builder · 5+ years · B2B SaaS · Complex Systems
         </p>
 
         <a
