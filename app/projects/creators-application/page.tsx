@@ -259,7 +259,7 @@ export default function CreatorsApplication() {
         {/* [3][9] Screens — fonts match site, centered narrow layout */}
         <CaseSection id="screens" title="Screens – Bringing Core Values to Life">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-16">
-            To help more users complete onboarding, we crafted every screen based on real user needs and experience principles that reflect our product&apos;s personality and purpose.
+            Every screen is designed around specific moments in the creator&apos;s journey, from first impression to final submit.
           </p>
 
           <div className="flex flex-col gap-24">
@@ -269,8 +269,8 @@ export default function CreatorsApplication() {
                 alt: "Onboarding screen – motivation and value proposition",
                 reverse: false,
                 points: [
-                  { title: "Motivation First", text: "From the very beginning, we highlight the value users will gain — before asking anything from them. It's about building momentum through early emotional connection." },
-                  { title: "Clear Values", text: "Right from the first screen, we express what matters most to our audience: creative freedom, community, and flexibility." },
+                  { title: "Motivation First", text: "The first screen shows what creators get from joining, before asking anything from them." },
+                  { title: "Clear Values", text: "Three values are stated upfront: creative freedom, community, and flexibility." },
                 ],
               },
               {
@@ -278,8 +278,8 @@ export default function CreatorsApplication() {
                 alt: "Onboarding screen – warm start with name question",
                 reverse: true,
                 points: [
-                  { title: "Warm Start", text: "We open with a simple, human question — not a form. This small touch builds trust before asking for anything more personal." },
-                  { title: "Friendly microcopy", text: "We used clear, supportive, and human language throughout the flow. It feels like someone is guiding you, not a system checking boxes." },
+                  { title: "Warm Start", text: "The first question is a name, not a form. It starts a conversation rather than a transaction." },
+                  { title: "Friendly microcopy", text: "The microcopy addresses the creator by name and frames each step as a question, not a requirement." },
                 ],
               },
               {
@@ -288,7 +288,7 @@ export default function CreatorsApplication() {
                 reverse: false,
                 points: [
                   { title: "Step-by-Step", text: "We broke the journey into focused steps and added a progress bar. This reduced friction, keeps users engaged and helps avoid overwhelm." },
-                  { title: "Personal Comes Later", text: "We start with the professional questions — the reason users came. Then move to personal info once rapport is established." },
+                  { title: "Personal Comes Later", text: "Professional questions come first. Personal info comes after the creator has already committed to the process." },
                 ],
               },
               {
@@ -296,8 +296,8 @@ export default function CreatorsApplication() {
                 alt: "Onboarding screen – celebrating progress with community",
                 reverse: true,
                 points: [
-                  { title: "Keep it simple", text: "The entire flow is short, intuitive, and built to keep users moving forward without second-guessing." },
-                  { title: "Celebrating progress", text: "Each step comes with clear feedback and visual indicators of progress, helping users feel in control and motivated to finish." },
+                  { title: "Keep it simple", text: "The entire flow is short, opinionated, and built to keep creators moving forward without second-guessing." },
+                  { title: "Celebrating progress", text: "Each step confirms the input and shows progress. Creators can see how much is left at any point." },
                 ],
               },
             ].map(({ src, alt, reverse, points }) => (
@@ -332,8 +332,8 @@ export default function CreatorsApplication() {
         <CaseSection id="takeaways" title="Key Takeaways from the Process">
           <ul className="flex flex-col gap-5">
             {[
-              <>Learned to always <strong className="font-semibold">question product requirements</strong> — I received desktop-only wireframes with no mention of mobile, so by challenging assumptions early, I ensured a proper mobile-first design.</>,
-              <>Team collaboration improves the product: by focusing on my UX strengths and guiding a teammate on illustrations, we leveraged each member&apos;s skills to deliver a <strong className="font-semibold">stronger, more polished result</strong>.</>,
+              <>Learned to always <strong className="font-semibold">question product requirements</strong>: I received desktop-only wireframes with no mention of mobile, so by challenging assumptions early, I ensured a proper mobile-first design.</>,
+              <>Team collaboration improved the product: I focused on the UX and guided a teammate on illustrations, playing to each person&apos;s strengths.</>,
             ].map((item, i) => (
               <li
                 key={i}

@@ -29,7 +29,7 @@ export default function About() {
           <div className="space-y-6 max-w-xl">
             <p className="text-[24px] leading-snug font-semibold text-[#111111]">
               I&apos;m fascinated by how people think and decide. That&apos;s what drives me to
-              build systems that actually feel simple to use.
+              build systems that feel simple to use.
             </p>
 
             <p className="text-[17px] leading-relaxed text-[#444444]">

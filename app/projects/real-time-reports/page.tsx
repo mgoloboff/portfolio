@@ -270,8 +270,7 @@ export default function RealTimeReports() {
               description={
                 <>
                   Our users spend most of their day in the system, so we designed the Table Builder
-                  with <strong className="text-[var(--fg)]">flow state</strong>, to enable a seamless
-                  workflow, requiring minimal effort while delivering maximum speed.
+                  with <strong className="text-[var(--fg)]">flow state</strong> in mind: fast to set up, low effort to run.
                 </>
               }
               src="/table-builder.mp4"
@@ -283,7 +282,7 @@ export default function RealTimeReports() {
             />
             <VideoBlock
               title="Let's Play Within the Table"
-              description="Users need to explore data without generating a new report each time, which is slow, costly, and disruptive. On-table controls provide a faster, friction-free way to interact with the data."
+              description="On-table controls let users filter, sort, and pivot without leaving the view."
               src="/table-interactions.mp4"
             />
           </div>
@@ -326,7 +325,7 @@ export default function RealTimeReports() {
               <>Learned to quickly turn mistakes into <strong className="font-semibold">solutions under pressure</strong></>,
               <>Strengthened team <strong className="font-semibold">collaboration</strong> despite changing team members, including <strong className="font-semibold">developers working remotely</strong> from abroad</>,
               <>Introduced an <strong className="font-semibold">external design library</strong> for the first time in the company&apos;s history</>,
-              <>Learned that <strong className="font-semibold">precise token assignment</strong> is what makes a system truly scalable – when every element has the right token, changes like <strong className="font-semibold">dark mode propagate on their own</strong></>,
+              <>Learned that <strong className="font-semibold">precise token assignment</strong> is what makes a system truly scalable: when every element has the right token, changes like <strong className="font-semibold">dark mode propagate on their own</strong></>,
             ].map((item, i) => (
               <li
                 key={i}

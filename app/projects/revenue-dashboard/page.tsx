@@ -212,14 +212,13 @@ export default function RevenueDashboard() {
         {/* Key Insights */}
         <CaseSection id="insights" title="Key Insights">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-8">
-            Our dashboard must surface the most important information at a glance – giving users
-            clarity and helping them focus on what matters.
+            Our dashboard must surface the most important information at a glance, so publishers can focus their attention where the numbers are moving.
           </p>
 
           <div className="bg-[#ECE7DA] rounded-[18px] p-8">
             <p className="font-mono text-[11px] tracking-[0.04em] text-[var(--muted)] mb-3">How might we</p>
             <p className="text-[18px] leading-[1.62] text-[var(--fg)]">
-              Present the most important revenue insights in the simplest way – so publishers take
+              Present the most important revenue insights in the simplest way, so publishers take
               action and improve monetization?
             </p>
           </div>
@@ -255,7 +254,7 @@ export default function RevenueDashboard() {
             <div>
               <p className="font-display font-bold text-[19px] text-[var(--fg)] mb-3">1. Quick-glance performance</p>
               <p className="text-[16px] leading-[1.62] text-[#3a352c] mb-6">
-                We used summary cards to highlight top priority data — Revenue by Time (Yesterday, MTD, Previous Month).
+                We used summary cards to highlight top priority data: Revenue by Time (Yesterday, MTD, Previous Month).
               </p>
               <div className="w-full rounded-[18px] overflow-hidden">
                 <Image
@@ -285,7 +284,7 @@ export default function RevenueDashboard() {
             <div>
               <p className="font-display font-bold text-[19px] text-[var(--fg)] mb-3">3. Contextual Breakdowns</p>
               <p className="text-[16px] leading-[1.62] text-[#3a352c] mb-6">
-                Revenue by OS, Device, and by Country — enabling users to dig deeper without losing context.
+                Revenue broken down by OS, Device, and Country, so users can dig into what's driving performance.
               </p>
               <div className="w-full">
                 <Image
