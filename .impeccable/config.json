@@ -1,0 +1,35 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/projects/revenue-dashboard/page.tsx"
+        ],
+        "createdAt": "2026-11-26T11:02:43.695Z",
+        "reason": "L142 is a customer testimonial blockquote — left border is standard typographic convention for pull quotes"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/projects/creators-application/page.tsx"
+        ],
+        "createdAt": "2026-11-26T11:03:35.452Z",
+        "reason": "L224 uses distinct per-item colors (blue/purple/yellow) to categorize 3 different design goals — intentional differentiation, not generic AI-slop accent"
+      },
+      {
+        "rule": "side-tab",
+        "value": "*",
+        "files": [
+          "app/projects/real-time-reports/page.tsx"
+        ],
+        "createdAt": "2026-11-26T11:03:56.826Z",
+        "reason": "L226 is a research finding callout (pull quote pattern) — left border is standard editorial typography, not AI-generated UI chrome"
+      }
+    ]
+  }
+}

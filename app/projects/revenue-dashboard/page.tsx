@@ -318,16 +318,10 @@ export default function RevenueDashboard() {
         {/* Key Takeaways */}
         <CaseSection id="takeaways" title="Key Takeaways from the Process">
           <ul className="flex flex-col gap-5">
-            <li
-              className="text-[18px] leading-[1.62] text-[#3a352c]"
-              style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "22px" }}
-            >
+            <li className="text-[18px] leading-[1.62] text-[#3a352c]">
               Working with stakeholders rather than for them led to better outcomes and faster buy-in.
             </li>
-            <li
-              className="text-[18px] leading-[1.62] text-[#3a352c]"
-              style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "22px" }}
-            >
+            <li className="text-[18px] leading-[1.62] text-[#3a352c]">
               A solid information hierarchy makes every mid-project constraint cheaper to absorb.
             </li>
           </ul>

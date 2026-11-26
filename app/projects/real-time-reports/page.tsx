@@ -87,22 +87,6 @@ export default function RealTimeReports() {
           />
         </div>
 
-        {/* Metrics row */}
-        <div className="flex flex-wrap gap-[56px] -mt-[40px] mb-2 justify-center text-center">
-          <div>
-            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">3</div>
-            <div className="font-mono text-[12px] text-[var(--muted)]">Enterprise pilots launched</div>
-          </div>
-          <div>
-            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">83%</div>
-            <div className="font-mono text-[12px] text-[var(--muted)]">Users migrated from legacy</div>
-          </div>
-          <div>
-            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">−25%</div>
-            <div className="font-mono text-[12px] text-[var(--muted)]">Fewer exports to Excel</div>
-          </div>
-        </div>
-
         {/* Overview */}
         <CaseSection id="overview" title="Overview">
           <p className="text-[18px] leading-[1.62] text-[#3a352c]">
@@ -299,6 +283,22 @@ export default function RealTimeReports() {
           <UserTestingComparison />
         </CaseSection>
 
+        {/* Metrics row */}
+        <div className="flex flex-wrap gap-[56px] mt-20 mb-2 justify-center text-center">
+          <div>
+            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">3</div>
+            <div className="font-mono text-[12px] text-[var(--muted)]">Enterprise pilots launched</div>
+          </div>
+          <div>
+            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">83%</div>
+            <div className="font-mono text-[12px] text-[var(--muted)]">Users migrated from legacy</div>
+          </div>
+          <div>
+            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">−25%</div>
+            <div className="font-mono text-[12px] text-[var(--muted)]">Fewer exports to Excel</div>
+          </div>
+        </div>
+
         {/* Validation */}
         <CaseSection id="validation" title="Validation & Iteration">
           <p className="text-[18px] leading-[1.62] text-[#3a352c] mb-4">
@@ -330,7 +330,6 @@ export default function RealTimeReports() {
               <li
                 key={i}
                 className="text-[18px] leading-[1.62] text-[#3a352c]"
-                style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "22px" }}
               >
                 {item}
               </li>

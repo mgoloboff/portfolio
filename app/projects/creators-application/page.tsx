@@ -338,7 +338,6 @@ export default function CreatorsApplication() {
               <li
                 key={i}
                 className="text-[18px] leading-[1.62] text-[#3a352c]"
-                style={{ borderLeft: "3px solid var(--accent)", paddingLeft: "22px" }}
               >
                 {item}
               </li>
