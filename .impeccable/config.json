@@ -29,6 +29,15 @@
         ],
         "createdAt": "2026-11-26T11:03:56.826Z",
         "reason": "L226 is a research finding callout (pull quote pattern) — left border is standard editorial typography, not AI-generated UI chrome"
+      },
+      {
+        "rule": "cream-palette",
+        "value": "*",
+        "files": [
+          "public/hero-gen.html"
+        ],
+        "createdAt": "2026-11-26T11:05:00.532Z",
+        "reason": "Portfolio brand palette — #ddd9d3 is the deliberate site-wide background color, applied consistently across all pages by design, not a reflexive AI default"
       }
     ]
   }
