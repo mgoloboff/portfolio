@@ -71,7 +71,7 @@ export default function RealTimeReports() {
 
           {/* Subtitle */}
           <p className="text-[20px] leading-[1.55] text-[#3a352c] max-w-[52ch] mx-auto">
-            Real-Time Analytics platform that unifies performance data, enabling faster data-driven decisions.
+            Turned a tool teams were abandoning for Excel into the platform 83% of users switched to — with 68% more active users and 72% less Excel dependency.
           </p>
         </header>
 

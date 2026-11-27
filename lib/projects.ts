@@ -22,9 +22,9 @@ export const projects: Project[] = [
     description:
       "Deliver Real-time SaaS analytics platform that turns complex data into clear insights- helping teams decide faster and with confidence",
     metrics: [
-      { value: "3", label: "Clients landed" },
-      { value: "83%", label: "Users migrated" },
-      { value: "−25%", label: "Excel workarounds" },
+      { value: "+68%", label: "Growth in active users" },
+      { value: "83%", label: "Migrated from legacy" },
+      { value: "72%", label: "Less Excel dependency" },
     ],
     thumbnail: "/real-time-reports-thumb.webp",
     imageAlt: "Real-Time Reports Analytics System",
