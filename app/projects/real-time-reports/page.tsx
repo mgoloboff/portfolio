@@ -294,8 +294,8 @@ export default function RealTimeReports() {
             <div className="font-mono text-[12px] text-[var(--muted)]">Users migrated from legacy</div>
           </div>
           <div>
-            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">−25%</div>
-            <div className="font-mono text-[12px] text-[var(--muted)]">Fewer exports to Excel</div>
+            <div className="font-display font-extrabold text-[56px] tracking-[-0.02em] text-[var(--green)]">72%</div>
+            <div className="font-mono text-[12px] text-[var(--muted)]">Reduction in Excel dependency</div>
           </div>
         </div>
 
